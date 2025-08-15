@@ -291,6 +291,29 @@ section {
 
     .text-industry {
         text-align: center;
+
+        h1 {
+            font-size: 50px;
+            margin-top: 25px;
+            font-weight: 600;
+            color: var(--color-black);
+
+            font {
+                color: var(--color-primary);
+                font-weight: 600;
+            }
+        }
+
+        p {
+            color: var(--color-gray);
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    }
+
+    .video-industy {
+        width: 637px;
+        height: ;
     }
 }
 
