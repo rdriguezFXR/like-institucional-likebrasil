@@ -1,0 +1,107 @@
+/* ...existing code... */
+.team-section {
+    max-width: 1200px;
+    margin: 48px auto;
+    padding: 0 24px 32px 24px;
+}
+
+.team-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.team-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.team-header .highlight {
+    color: #18a34a;
+}
+
+.team-header p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.team-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+    padding: 32px 20px 24px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 340px;
+}
+
+.team-photo {
+    margin-bottom: 16px;
+}
+
+.team-photo img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #18a34a;
+    background: #eaf9f0;
+}
+
+.team-placeholder {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #18a34a;
+    display: inline-block;
+}
+
+.team-card h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #222;
+}
+
+.team-role {
+    font-size: 0.98rem;
+    color: #18a34a;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: 500;
+}
+
+.team-tags {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.team-tags span {
+    background: #eaf9f0;
+    color: #18a34a;
+    font-size: 0.88rem;
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-weight: 500;
+}
+
+.team-card p {
+    color: #555;
+    font-size: 0.98rem;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+/* ...existing code... */
