@@ -273,7 +273,7 @@ section {
         font-size: 15px;
         font-weight: 600;
     }
-    
+
     p {
         color: var(--color-gray);
         margin-top: 10px;
@@ -292,4 +292,129 @@ section {
     .text-industry {
         text-align: center;
     }
+}
+
+/* COMO FUNCIONA NOSSO NEGOCIO */
+
+
+:root {
+    --fundo: #ffffff;
+    --texto: #0b1420;
+    --texto-suave: #6b7280;
+    --fundo-cartao: #f7faf9;
+    --borda: #d8ece2;
+    --verde: #16a34a;
+    --verde-escuro: #12ae59;
+    --sombra: 0 6px 24px rgba(0, 0, 0, .06);
+}
+
+.como-funciona {
+    background: var(--fundo);
+    padding: clamp(32px, 5vw, 64px) 0;
+    color: var(--texto);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.container-como-funciona {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cabecalho-como-funciona {
+    text-align: center;
+    margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.cabecalho-como-funciona h2 {
+    font-size: clamp(24px, 3.6vw, 36px);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: .2px;
+    margin: 0 0 10px;
+}
+
+.cabecalho-como-funciona h2 span {
+    color: var(--verde);
+}
+
+.cabecalho-como-funciona p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: var(--texto-suave);
+    font-size: clamp(13px, 1.6vw, 15px);
+    line-height: 1.6;
+}
+
+.grade-como-funciona {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+@media (min-width: 700px) {
+    .grade-como-funciona {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grade-como-funciona {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+}
+
+.cartao-como-funciona {
+    position: relative;
+    background: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    box-shadow: var(--sombra);
+    padding: 18px 18px 20px;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    overflow: hidden;
+}
+
+.cartao-como-funciona:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .08);
+    border-color: #cfe8db;
+}
+
+.cartao-como-funciona::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 36px;
+    height: 36px;
+    background: radial-gradient(120% 120% at 20% 20%, #2dd573 0%, #16a34a 70%);
+    border-radius: 10px;
+    transform: rotate(45deg);
+    opacity: .9;
+}
+
+.icone-cartao {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    color: var(--verde);
+    background: #e8f6ee;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.cartao-como-funciona h3 {
+    font-size: 16px;
+    margin: 6px 0 6px;
+    font-weight: 700;
+}
+
+.cartao-como-funciona p {
+    font-size: 14px;
+    color: var(--texto-suave);
+    line-height: 1.55;
+    margin: 0;
 }
