@@ -9,7 +9,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="./styles/about.css">
+    <link rel="stylesheet" href="./styles/industry.css">
+    <link rel="stylesheet" href="./styles/business.css">
+    <link rel="stylesheet" href="./styles/opportunities.css">
+    <link rel="stylesheet" href="./styles/team.css">
     <title>Like Brasil</title>
 </head>
 
@@ -25,7 +31,7 @@
             <a href="#team">Equipe</a>
         </nav>
         <div class="header-actions">
-            <a href="">Contato</a>
+            <a href="#contact">Contato</a>
             <button>Entrar</button>
         </div>
     </header>
@@ -52,7 +58,7 @@
 
         <section id="about" class="about-section">
             <div class="about-image">
-                foto
+                <img src="./assets/foto-home.png" alt="Like Brasil">
             </div>
             <div class="about-content">
                 <h1>Descubra a história por trás da <span class="highlight">Like Brasil</span></h1>
@@ -88,29 +94,29 @@
                 </div>
                 <div class="value-card">
                     <div class="card-icon">
-                        <img src="./assets/plan.png" alt="Sustentabilidade">
+                        <img src="./assets/heart.png" alt="Qualidade">
                     </div>
                     <div class="card-content">
-                        <h2>Sustentabilidade</h2>
-                        <p>Compromisso com o meio ambiente em cada etapa da produção</p>
+                        <h2>Qualidade</h2>
+                        <p>Excelência em cada produto que desenvolvemos</p>
                     </div>
                 </div>
                 <div class="value-card">
                     <div class="card-icon">
-                        <img src="./assets/plan.png" alt="Sustentabilidade">
+                        <img src="./assets/users.png" alt="Comunidade">
                     </div>
                     <div class="card-content">
-                        <h2>Sustentabilidade</h2>
-                        <p>Compromisso com o meio ambiente em cada etapa da produção</p>
+                        <h2>Comunidade</h2>
+                        <p>Fortalecimento das comunidades locais e produtores</p>
                     </div>
                 </div>
                 <div class="value-card">
                     <div class="card-icon">
-                        <img src="./assets/plan.png" alt="Sustentabilidade">
+                        <img src="./assets/world.png" alt="Inovação">
                     </div>
                     <div class="card-content">
-                        <h2>Sustentabilidade</h2>
-                        <p>Compromisso com o meio ambiente em cada etapa da produção</p>
+                        <h2>Inovação</h2>
+                        <p>Desenvolvimento contínuo de soluções inovadoras</p>
                     </div>
                 </div>
             </div>
@@ -122,107 +128,151 @@
                 <p>Grandes unidades indústriais próprias.</p>
             </div>
             <div class="industry-media">
-                <video class="industry-video" autoplay loop muted playsinline>
-                    <source src="./assets/video-like-brasil.mp4" type="video/mp4">
-                </video>
+                <iframe class="industry-video" src="https://www.youtube.com/embed/j5XMkiVSj8o?autoplay=1&mute=1" frameborder="0"
+                    allowfullscreen>
+                </iframe>
+                <div>
+                    <h1>Excelência em Cada Detalhe</h1>
+                    <p>Nossa fábrica de 5.000m² está localizada em São Paulo e conta com laboratórios próprios de P&D,
+                        área de produção automatizada e centro de distribuição integrado.</p>
+                    <li>Capacidade de produção: 1 milhão de unidades/mês</li>
+                    <li>Laboratório próprio com 15 pesquisadores</li>
+                    <li>Certificação ISO 9001:2015</li>
+                    <li>100% licenciada pela ANVISA</li>
+                </div>
+            </div>
+        </section>
+
+        <section id="business" class="business-section">
+            <div class="business-container">
+                <div class="business-header">
+                    <h1>Como Funciona Nosso <span class="highlight">Negócio</span></h1>
+                    <p>Do laboratório ao consumidor final: conheça todo o processo da Like Brasil que garante a
+                        excelência
+                        dos nossos produtos cosméticos.</p>
+                </div>
+                <div class="business-grid">
+                    <article class="business-card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path
+                                    d="M9 18h6M10 22h4M12 2a7 7 0 0 0-7 7c0 2.6 1.4 4.6 3 6 .7.6 1 1.2 1 2h6c0-.8.3-1.4 1-2 1.6-1.4 3-3.4 3-6a7 7 0 0 0-7-7Z" />
+                            </svg>
+                        </div>
+                        <h3>Modelo de Marketing</h3>
+                        <p>Descubra como nosso modelo de Marketing Multinível transforma dedicação em resultados,
+                            oferecendo
+                            a chance de empreender com produtos de qualidade e suporte contínuo.</p>
+                    </article>
+
+                    <article class="business-card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path d="M10 2v4l-5.5 9A3 3 0 0 0 7 20h10a3 3 0 0 0 2.5-5L14 6V2" />
+                                <path d="M8 6h8" />
+                            </svg>
+                        </div>
+                        <h3>Plano de Carreira</h3>
+                        <p>Cresça com a gente! Alcance novos níveis de sucesso com nosso plano de carreira estruturado,
+                            reconhecimentos e recompensas exclusivas.</p>
+                    </article>
+
+                    <article class="business-card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                        <h3>Vantagens de Ser Membro</h3>
+                        <p>Ao se tornar membro, você recebe muito mais do que uma oportunidade: treinamentos, eventos,
+                            suporte dedicado e benefícios financeiros que impulsionam seu sucesso.</p>
+                    </article>
+
+                    <article class="business-card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 2 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+                                <path d="M3.3 7.3 12 12l8.7-4.7M12 22V12" />
+                            </svg>
+                        </div>
+                        <h3>Embalagem &amp; Design</h3>
+                        <p>Cuidado especial com embalagens sustentáveis e design atrativo que reflete a qualidade do
+                            produto.</p>
+                    </article>
+
+                    <article class="business-card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path d="M10 17h4V5H2v12h2m18-4h-5V9h3l2 3v1z" />
+                                <circle cx="7" cy="17" r="2" />
+                                <circle cx="17" cy="17" r="2" />
+                            </svg>
+                        </div>
+                        <h3>Distribuição</h3>
+                        <p>Rede de distribuição nacional eficiente que garante produtos frescos em pontos de venda
+                            estratégicos.</p>
+                    </article>
+
+                    <article class="business-card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M9 10h.01M15 10h.01M8 15s2 2 4 2 4-2 4-2" />
+                            </svg>
+                        </div>
+                        <h3>Cliente Final</h3>
+                        <p>Chegamos ao consumidor através de farmácias, perfumarias e lojas especializadas em todo o
+                            Brasil.
+                        </p>
+                    </article>
+                </div>
             </div>
         </section>
     </main>
 
-    <section id="business" class="business-section">
-        <div class="business-container">
-            <div class="business-header">
-                <h1>Como Funciona Nosso <span class="highlight">Negócio</span></h1>
-                <p>Do laboratório ao consumidor final: conheça todo o processo da Like Brasil que garante a excelência
-                    dos nossos produtos cosméticos.</p>
-            </div>
+    <script>
+        document.querySelectorAll('header nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
 
-            <div class="business-grid">
-                <article class="business-card">
-                    <div class="card-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                            stroke-width="1.8">
-                            <path
-                                d="M9 18h6M10 22h4M12 2a7 7 0 0 0-7 7c0 2.6 1.4 4.6 3 6 .7.6 1 1.2 1 2h6c0-.8.3-1.4 1-2 1.6-1.4 3-3.4 3-6a7 7 0 0 0-7-7Z" />
-                        </svg>
-                    </div>
-                    <h3>Modelo de Marketing</h3>
-                    <p>Descubra como nosso modelo de Marketing Multinível transforma dedicação em resultados, oferecendo
-                        a chance de empreender com produtos de qualidade e suporte contínuo.</p>
-                </article>
+        window.addEventListener('scroll', function () {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('header nav a');
 
-                <article class="business-card">
-                    <div class="card-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                            stroke-width="1.8">
-                            <path d="M10 2v4l-5.5 9A3 3 0 0 0 7 20h10a3 3 0 0 0 2.5-5L14 6V2" />
-                            <path d="M8 6h8" />
-                        </svg>
-                    </div>
-                    <h3>Plano de Carreira</h3>
-                    <p>Cresça com a gente! Alcance novos níveis de sucesso com nosso plano de carreira estruturado,
-                        reconhecimentos e recompensas exclusivas.</p>
-                </article>
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-                <article class="business-card">
-                    <div class="card-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                            stroke-width="1.8">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg>
-                    </div>
-                    <h3>Vantagens de Ser Membro</h3>
-                    <p>Ao se tornar membro, você recebe muito mais do que uma oportunidade: treinamentos, eventos,
-                        suporte dedicado e benefícios financeiros que impulsionam seu sucesso.</p>
-                </article>
-
-                <article class="business-card">
-                    <div class="card-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                            stroke-width="1.8">
-                            <path
-                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 2 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
-                            <path d="M3.3 7.3 12 12l8.7-4.7M12 22V12" />
-                        </svg>
-                    </div>
-                    <h3>Embalagem &amp; Design</h3>
-                    <p>Cuidado especial com embalagens sustentáveis e design atrativo que reflete a qualidade do
-                        produto.</p>
-                </article>
-
-                <article class="business-card">
-                    <div class="card-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                            stroke-width="1.8">
-                            <path d="M10 17h4V5H2v12h2m18-4h-5V9h3l2 3v1z" />
-                            <circle cx="7" cy="17" r="2" />
-                            <circle cx="17" cy="17" r="2" />
-                        </svg>
-                    </div>
-                    <h3>Distribuição</h3>
-                    <p>Rede de distribuição nacional eficiente que garante produtos frescos em pontos de venda
-                        estratégicos.</p>
-                </article>
-
-                <article class="business-card">
-                    <div class="card-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                            stroke-width="1.8">
-                            <circle cx="12" cy="12" r="9" />
-                            <path d="M9 10h.01M15 10h.01M8 15s2 2 4 2 4-2 4-2" />
-                        </svg>
-                    </div>
-                    <h3>Cliente Final</h3>
-                    <p>Chegamos ao consumidor através de farmácias, perfumarias e lojas especializadas em todo o Brasil.
-                    </p>
-                </article>
-            </div>
-        </div>
-    </section>
-
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,182 @@
+:root {
+    /* Cores principais */
+    --color-primary: #16A34A;
+    --color-black: #0A0A0A;
+    --color-gray: #6B7280;
+    --color-white: #fff;
+    --color-black-transparent: #0000004c;
+    --color-primary-transparent: #16a34a30;
+    --fundo: #ffffff;
+    --texto: #0b1420;
+    --texto-suave: #6b7280;
+    --fundo-cartao: #f7faf9;
+    --borda: #d8ece2;
+    --sombra: 0 6px 24px rgba(0, 0, 0, .06);
+
+    /* Linear do button */
+    --linear-button: linear-gradient(to right, #16a34a, #12a447, #0ca544, #06a541, #00a63e);
+
+    /* linear do background */
+    --linear-background: linear-gradient(to bottom, #fff, #fff, #fff, #fff, #fcfeff, #fcfeff, #fcfeff, #fcfeff, #f8feff, #f3fefd, #f0fefa, #f0fdf4);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    color: #0A0A0A;
+}
+
+/* Header global */
+header {
+    padding-left: 50px;
+    padding-right: 50px;
+    position: fixed;
+    width: 100%;
+    height: 67px;
+    font-size: 14px;
+    display: flex;
+    z-index: 10;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-primary-transparent);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+header nav {
+    display: flex;
+    gap: 27px;
+}
+
+header nav a {
+    color: var(--color-black);
+    text-decoration-line: none;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+header nav a:hover {
+    color: var(--color-primary);
+}
+
+header nav a.active {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+header nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    border-radius: 1px;
+}
+
+header .header-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header .header-actions a {
+    color: var(--color-black);
+    font-size: 14px;
+    text-decoration-line: none;
+    transition: color 0.3s ease;
+}
+
+header .header-actions a:hover {
+    color: var(--color-primary);
+}
+
+header .header-actions button {
+    border: none;
+    cursor: pointer;
+    padding: 7px 14px 7px 14px;
+    border-radius: 10px;
+    color: white;
+    background-image: var(--linear-button);
+    transition: transform 0.3s ease;
+}
+
+header .header-actions button:hover {
+    transform: translateY(-2px);
+}
+
+/* Main container */
+main {
+    padding-top: 67px;
+}
+
+/* Botões globais */
+.btn-primary {
+    border: none;
+    cursor: pointer;
+    padding: 16px 26px 16px 26px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    gap: 5px;
+    background-image: var(--linear-button);
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: none;
+    cursor: pointer;
+    padding-left: 26px;
+    padding-right: 26px;
+    border-radius: 10px;
+    border: 1px solid;
+    color: var(--color-primary);
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Classes utilitárias */
+.highlight {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* Container padrão */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    header nav {
+        gap: 15px;
+    }
+    
+    header nav a {
+        font-size: 12px;
+    }
+}
