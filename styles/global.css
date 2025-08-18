@@ -120,6 +120,9 @@ main {
 
 /* Botões globais */
 .btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     cursor: pointer;
     padding: 16px 26px 16px 26px;

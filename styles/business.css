@@ -2,7 +2,6 @@
     background: var(--fundo);
     padding: clamp(32px, 5vw, 64px) 0;
     color: var(--texto);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     min-height: 100vh;
 }
 
@@ -85,8 +84,9 @@
 .business-card .card-icon {
     width: 42px;
     height: 42px;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--verde);
     background: #e8f6ee;
     border-radius: 10px;
@@ -110,25 +110,24 @@
     line-height: 1.55;
 }
 
-/* ...existing code... */
 .business-model-section {
-    background: #fff;
     border-radius: 16px;
     padding: 40px 24px;
     margin: 40px auto;
     max-width: 1100px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
     text-align: center;
 }
 
 .business-model-section h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
     margin-bottom: 8px;
 }
 
 .business-model-section p {
-    color: #555;
-    margin-bottom: 32px;
+    font-size: 14px;
+    color: var(--color-gray);
+    margin-bottom: 45px;
 }
 
 .business-model-grid {
@@ -145,14 +144,14 @@
 }
 
 .circle {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 400;
     margin: 0 auto 12px auto;
     color: #fff;
 }
@@ -162,12 +161,11 @@
 }
 
 .circle.b2c {
-    background: #2ecc71;
+    background: rgba(46, 204, 112, 0.900);
 }
 
 .circle.private-label {
     background: #a3e4c9;
-    color: #222;
 }
 
 .business-model-card h2 {
@@ -176,150 +174,6 @@
 }
 
 .business-model-card p {
-    color: #666;
-    font-size: 0.98rem;
-}
-
-.business-model-info {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    margin-top: 16px;
-    font-size: 1.1rem;
-    color: #18a34a;
-}
-
-.business-model-info strong {
-    font-size: 1.3rem;
-    color: #18a34a;
-}
-
-/* ...existing code... */
-.business-opportunities-section {
-    background: #fff;
-    border-radius: 16px;
-    padding: 40px 24px;
-    margin: 40px auto;
-    max-width: 1100px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
-}
-
-.business-opportunities-grid {
-    display: flex;
-    gap: 32px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.business-opportunity-card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
-    padding: 32px 24px 24px 24px;
-    min-width: 340px;
-    max-width: 480px;
-    flex: 1 1 340px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-}
-
-.opportunity-type {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    font-size: 0.85rem;
-    color: #888;
-    letter-spacing: 1px;
-    font-weight: 500;
-}
-
-.opportunity-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.business-opportunity-card h2 {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-    margin-top: 0;
-}
-
-.business-opportunity-card p {
-    color: #555;
-    margin-bottom: 16px;
-}
-
-.benefits {
-    margin-bottom: 24px;
-}
-
-.benefits strong {
-    display: block;
-    margin-bottom: 6px;
-    color: #222;
-}
-
-.benefits ul {
-    padding-left: 18px;
-    margin: 0;
-}
-
-.benefits ul li {
-    color: #18a34a;
-    font-size: 1rem;
-    margin-bottom: 4px;
-    list-style: disc;
-}
-
-.btn-primary {
-    background: #18a34a;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 0;
-    width: 100%;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.btn-primary:hover {
-    background: #14863a;
-}
-
-/* ...existing code... */
-
-/* Responsividade para a página business */
-@media (max-width: 768px) {
-    .business-section {
-        padding: 40px 0;
-    }
-
-    .business-header h1 {
-        font-size: 35px;
-    }
-
-    .business-header p {
-        font-size: 14px;
-    }
-
-    .business-card {
-        padding: 15px;
-    }
-
-    .business-card h3 {
-        font-size: 13px;
-    }
-
-    .business-card p {
-        font-size: 12px;
-    }
+    color: var(--color-gray);
+    font-size: 14px;
 }

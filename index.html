@@ -16,12 +16,13 @@
     <link rel="stylesheet" href="./styles/business.css">
     <link rel="stylesheet" href="./styles/opportunities.css">
     <link rel="stylesheet" href="./styles/team.css">
+    <link rel="stylesheet" href="./styles/modal.css">
     <title>Like Brasil</title>
 </head>
 
 <body>
     <header>
-        <img src="./assets/logolikebrasil.png" alt="Like Brasil Logo">
+        <img src="./assets/logolikebrasil.svg" alt="Like Brasil Logo">
         <nav>
             <a href="#home">Início</a>
             <a href="#about">Sobre</a>
@@ -32,9 +33,87 @@
         </nav>
         <div class="header-actions">
             <a href="#contact">Contato</a>
-            <button>Entrar</button>
+            <button id="open-auth-modal">Entrar</button>
         </div>
     </header>
+
+    <div id="auth-modal" class="auth-modal" aria-hidden="true">
+        <div class="auth-backdrop" data-close></div>
+        <div class="auth-dialog" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+            <button class="auth-close" aria-label="Fechar" title="Fechar" data-close>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 6L18 18M18 6L6 18" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="auth-main">
+                <div class="auth-tabs" role="tablist" aria-label="Ações de conta">
+                    <button class="auth-tab active" role="tab" aria-selected="true" data-tab-target="login">Acesse a sua Conta</button>
+                    <button class="auth-tab" role="tab" aria-selected="false" data-tab-target="signup">Realizar Cadastro</button>
+                </div>
+
+                <div class="auth-content">
+                    <form class="auth-panel active" data-tab="login" aria-labelledby="authModalTitle">
+                        <h2 id="authModalTitle">Acesse a sua Conta</h2>
+                        <label class="auth-field">
+                            <span>Email</span>
+                            <input type="email" placeholder="seu@email.com" autocomplete="email" required>
+                        </label>
+                        <label class="auth-field password">
+                            <span>Senha</span>
+                            <input type="password" placeholder="********" autocomplete="current-password" required>
+                            <button type="button" class="toggle-password" aria-label="Mostrar senha">
+                                <svg class="eye" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 12C3.8 7.8 7.6 5 12 5C16.4 5 20.2 7.8 22 12C20.2 16.2 16.4 19 12 19C7.6 19 3.8 16.2 2 12Z" stroke="currentColor" stroke-width="1.6"/>
+                                    <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.6"/>
+                                </svg>
+                            </button>
+                        </label>
+                        <div class="auth-row">
+                            <label class="checkbox">
+                                <input type="checkbox" checked>
+                                <span>Lembrar-me</span>
+                            </label>
+                            <a href="#" class="link">Esqueceu sua senha?</a>
+                        </div>
+                        <button class="btn-primary auth-submit" type="submit">Entrar</button>
+                    </form>
+
+                    <form class="auth-panel" data-tab="signup" aria-labelledby="signupTitle">
+                        <h2 id="signupTitle">Realizar Cadastro</h2>
+                        <label class="auth-field">
+                            <span>Nome Completo</span>
+                            <input type="text" placeholder="Seu nome" autocomplete="name" required>
+                        </label>
+                        <label class="auth-field">
+                            <span>E-mail</span>
+                            <input type="email" placeholder="seu@email.com" autocomplete="email" required>
+                        </label>
+                        <label class="auth-field password">
+                            <span>Senha</span>
+                            <input type="password" placeholder="********" autocomplete="new-password" required>
+                            <button type="button" class="toggle-password" aria-label="Mostrar senha">
+                                <svg class="eye" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 12C3.8 7.8 7.6 5 12 5C16.4 5 20.2 7.8 22 12C20.2 16.2 16.4 19 12 19C7.6 19 3.8 16.2 2 12Z" stroke="currentColor" stroke-width="1.6"/>
+                                    <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.6"/>
+                                </svg>
+                            </button>
+                        </label>
+                        <label class="auth-field password">
+                            <span>Confirmar Senha</span>
+                            <input type="password" placeholder="********" autocomplete="new-password" required>
+                            <button type="button" class="toggle-password" aria-label="Mostrar senha">
+                                <svg class="eye" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 12C3.8 7.8 7.6 5 12 5C16.4 5 20.2 7.8 22 12C20.2 16.2 16.4 19 12 19C7.6 19 3.8 16.2 2 12Z" stroke="currentColor" stroke-width="1.6"/>
+                                    <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.6"/>
+                                </svg>
+                            </button>
+                        </label>
+                        <button class="btn-primary auth-submit" type="submit">Finalizar Cadastro</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <main>
         <section id="home" class="hero-section">
@@ -44,7 +123,7 @@
                     centro de tudo.</p>
                 <div class="hero-buttons">
                     <button class="btn-primary">Nossa História
-                        <img src="./assets/arrowright.png" alt="Seta">
+                        <img src="./assets/arrowright.svg" alt="Seta">
                     </button>
                     <button class="btn-secondary">Nossos Produtos</button>
                 </div>
@@ -85,7 +164,7 @@
             <div class="values-grid">
                 <div class="value-card">
                     <div class="card-icon">
-                        <img src="./assets/plan.png" alt="Sustentabilidade">
+                        <img src="./assets/plan.svg" alt="Sustentabilidade">
                     </div>
                     <div class="card-content">
                         <h2>Sustentabilidade</h2>
@@ -94,7 +173,7 @@
                 </div>
                 <div class="value-card">
                     <div class="card-icon">
-                        <img src="./assets/heart.png" alt="Qualidade">
+                        <img src="./assets/heart.svg" alt="Qualidade">
                     </div>
                     <div class="card-content">
                         <h2>Qualidade</h2>
@@ -103,7 +182,7 @@
                 </div>
                 <div class="value-card">
                     <div class="card-icon">
-                        <img src="./assets/users.png" alt="Comunidade">
+                        <img src="./assets/users.svg" alt="Comunidade">
                     </div>
                     <div class="card-content">
                         <h2>Comunidade</h2>
@@ -112,7 +191,7 @@
                 </div>
                 <div class="value-card">
                     <div class="card-icon">
-                        <img src="./assets/world.png" alt="Inovação">
+                        <img src="./assets/world.svg" alt="Inovação">
                     </div>
                     <div class="card-content">
                         <h2>Inovação</h2>
@@ -144,8 +223,6 @@
         </section>
 
         <section id="business" class="business-section">
-
-
             <div class="business-container">
                 <div class="business-header">
                     <h1>Como Funciona Nosso <span class="highlight">Negócio</span></h1>
@@ -155,12 +232,8 @@
                 </div>
                 <div class="business-grid">
                     <article class="business-card">
-                        <div class="card-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                                stroke-width="1.8">
-                                <path
-                                    d="M9 18h6M10 22h4M12 2a7 7 0 0 0-7 7c0 2.6 1.4 4.6 3 6 .7.6 1 1.2 1 2h6c0-.8.3-1.4 1-2 1.6-1.4 3-3.4 3-6a7 7 0 0 0-7-7Z" />
-                            </svg>
+                        <div class="card-icon">
+                            <img src="./assets/light.svg" alt="">
                         </div>
                         <h3>Modelo de Marketing</h3>
                         <p>Descubra como nosso modelo de Marketing Multinível transforma dedicação em resultados,
@@ -170,11 +243,7 @@
 
                     <article class="business-card">
                         <div class="card-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                                stroke-width="1.8">
-                                <path d="M10 2v4l-5.5 9A3 3 0 0 0 7 20h10a3 3 0 0 0 2.5-5L14 6V2" />
-                                <path d="M8 6h8" />
-                            </svg>
+                            <img src="./assets/quimic.svg" alt="">
                         </div>
                         <h3>Plano de Carreira</h3>
                         <p>Cresça com a gente! Alcance novos níveis de sucesso com nosso plano de carreira estruturado,
@@ -183,13 +252,7 @@
 
                     <article class="business-card">
                         <div class="card-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                                stroke-width="1.8">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
+                            <img src="./assets/users.svg" alt="">
                         </div>
                         <h3>Vantagens de Ser Membro</h3>
                         <p>Ao se tornar membro, você recebe muito mais do que uma oportunidade: treinamentos, eventos,
@@ -198,12 +261,7 @@
 
                     <article class="business-card">
                         <div class="card-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                                stroke-width="1.8">
-                                <path
-                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 2 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
-                                <path d="M3.3 7.3 12 12l8.7-4.7M12 22V12" />
-                            </svg>
+                            <img src="./assets/box.svg" alt="">
                         </div>
                         <h3>Embalagem &amp; Design</h3>
                         <p>Cuidado especial com embalagens sustentáveis e design atrativo que reflete a qualidade do
@@ -212,12 +270,7 @@
 
                     <article class="business-card">
                         <div class="card-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                                stroke-width="1.8">
-                                <path d="M10 17h4V5H2v12h2m18-4h-5V9h3l2 3v1z" />
-                                <circle cx="7" cy="17" r="2" />
-                                <circle cx="17" cy="17" r="2" />
-                            </svg>
+                            <img src="./assets/truck.svg" alt="">
                         </div>
                         <h3>Distribuição</h3>
                         <p>Rede de distribuição nacional eficiente que garante produtos frescos em pontos de venda
@@ -226,11 +279,7 @@
 
                     <article class="business-card">
                         <div class="card-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                                stroke-width="1.8">
-                                <circle cx="12" cy="12" r="9" />
-                                <path d="M9 10h.01M15 10h.01M8 15s2 2 4 2 4-2 4-2" />
-                            </svg>
+                            <img src="./assets/users.svg" alt="">
                         </div>
                         <h3>Cliente Final</h3>
                         <p>Chegamos ao consumidor através de farmácias, perfumarias e lojas especializadas em todo o
@@ -239,39 +288,31 @@
                     </article>
                 </div>
             </div>
-
-
-        </section>
-
-
-        <section id="business-model" class="business-model-section">
-            <div class="business-model-container">
-                <h1>Nosso Modelo de Negócio</h1>
-                <p>Atuamos em diferentes frentes para maximizar nosso alcance e impacto no mercado de cosméticos.</p>
-                <div class="business-model-grid">
-                    <div class="business-model-card">
-                        <div class="circle b2b">70%</div>
-                        <h2>B2B (Atacado)</h2>
-                        <p>Fornecimento para redes de farmácias, perfumarias e distribuidores</p>
+            <div id="business-model" class="business-model-section">
+                <div class="business-model-container">
+                    <h1>Nosso Modelo de Negócio</h1>
+                    <p>Atuamos em diferentes frentes para maximizar nosso alcance e impacto no mercado de cosméticos.
+                    </p>
+                    <div class="business-model-grid">
+                        <div class="business-model-card">
+                            <div class="circle b2b">70%</div>
+                            <h2>B2B (Atacado)</h2>
+                            <p>Fornecimento para redes de farmácias, perfumarias e distribuidores</p>
+                        </div>
+                        <div class="business-model-card">
+                            <div class="circle b2c">20%</div>
+                            <h2>B2C (Varejo)</h2>
+                            <p>Venda direta ao consumidor através de canais próprios</p>
+                        </div>
+                        <div class="business-model-card">
+                            <div class="circle private-label">10%</div>
+                            <h2>Private Label</h2>
+                            <p>Desenvolvimento de produtos exclusivos para outras marcas</p>
+                        </div>
                     </div>
-                    <div class="business-model-card">
-                        <div class="circle b2c">20%</div>
-                        <h2>B2C (Varejo)</h2>
-                        <p>Venda direta ao consumidor através de canais próprios</p>
-                    </div>
-                    <div class="business-model-card">
-                        <div class="circle private-label">10%</div>
-                        <h2>Private Label</h2>
-                        <p>Desenvolvimento de produtos exclusivos para outras marcas</p>
-                    </div>
-                </div>
-                <div class="business-model-info">
-                    <span><strong>500+</strong> Pontos de Venda</span>
-                    <span><strong>25 Estados</strong> Presença Nacional</span>
                 </div>
             </div>
         </section>
-
 
         <section id="opportunities" class="opportunities-section">
             <div class="opportunities-container">
@@ -283,8 +324,7 @@
                 <div class="opportunities-grid">
                     <div class="opportunity-card">
                         <div class="opportunity-icon">
-                            <!-- Ícone de crescimento -->
-                            <img src="./assets/growth.png" alt="Valores e Sustentabilidade">
+                            <img src="./assets/graph.svg" alt="Valores e Sustentabilidade">
                         </div>
                         <h2>Valores e Sustentabilidade</h2>
                         <p>Trabalhamos para garantir a satisfação de nossos clientes e parceiros, promovendo o
@@ -292,8 +332,7 @@
                     </div>
                     <div class="opportunity-card">
                         <div class="opportunity-icon">
-                            <!-- Ícone de pessoas -->
-                            <img src="./assets/people.png" alt="Pessoas e Qualidade">
+                            <img src="./assets/users.svg" alt="Pessoas e Qualidade">
                         </div>
                         <h2>Pessoas e Qualidade</h2>
                         <p>Nosso foco é oferecer serviços de marketing multinível de alta qualidade, com compromisso com
@@ -301,8 +340,7 @@
                     </div>
                     <div class="opportunity-card">
                         <div class="opportunity-icon">
-                            <!-- Ícone de indústria -->
-                            <img src="./assets/factory.png" alt="Indústria Própria">
+                            <img src="./assets/industry.svg" alt="Indústria Própria">
                         </div>
                         <h2>Indústria Própria</h2>
                         <p>A única empresa do Brasil com quatro unidades fabris próprias, produzindo cosméticos e
@@ -310,20 +348,11 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section id="business-opportunities" class="business-opportunities-section">
             <div class="business-opportunities-grid">
                 <div class="business-opportunity-card">
                     <div class="opportunity-type">OPORTUNIDADE</div>
                     <div class="opportunity-icon" style="background:#2997ff;">
-                        <!-- Ícone de parceria comercial (SVG handshake) -->
-                        <svg width="32" height="32" fill="none">
-                            <rect width="32" height="32" rx="8" fill="#2997ff" />
-                            <path
-                                d="M10.5 17.5l2 2a2 2 0 002.83 0l2.67-2.67a1 1 0 00-1.41-1.41l-2.67 2.67a1 1 0 01-1.41-1.41l2.67-2.67a2 2 0 012.83 0l2 2"
-                                stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        <img src="./assets/patterners.svg" alt="">
                     </div>
                     <h2>Parcerias Comerciais</h2>
                     <p>Seja nosso parceiro distribuidor e tenha acesso exclusivo aos nossos produtos em sua região.</p>
@@ -336,18 +365,12 @@
                             <li>Treinamento</li>
                         </ul>
                     </div>
-                    <button class="btn-primary">Saiba Mais &rarr;</button>
+                    <button class="btn-primary opportunities-button">Saiba Mais <img src="./assets/arrowright.svg" alt=""></button>
                 </div>
                 <div class="business-opportunity-card">
                     <div class="opportunity-type">OPORTUNIDADE</div>
                     <div class="opportunity-icon" style="background:#a259ff;">
-                        <!-- Ícone de franquia (SVG crown) -->
-                        <svg width="32" height="32" fill="none">
-                            <rect width="32" height="32" rx="8" fill="#a259ff" />
-                            <path d="M8 13l4 4 4-4 4 4 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <rect x="10" y="20" width="12" height="2" rx="1" fill="#fff" />
-                        </svg>
+                        <img src="./assets/king.svg" alt="">
                     </div>
                     <h2>Franquias</h2>
                     <p>Abra sua própria loja com nossa marca consolidada e todo o suporte necessário.</p>
@@ -360,25 +383,23 @@
                             <li>ROI atrativo</li>
                         </ul>
                     </div>
-                    <button class="btn-primary">Saiba Mais &rarr;</button>
+                    <button class="btn-primary opportunities-button">Saiba Mais <img src="./assets/arrowright.svg" alt=""></button>
+                </div>
+            </div>
+            <div class="grow-with-us-section">
+                <div class="grow-with-us-container">
+                    <h2>Pronto para Crescer Conosco?</h2>
+                    <p>
+                        Entre em contato conosco e descubra como podemos construir uma parceria de sucesso no mercado de
+                        cosméticos.
+                    </p>
+                    <a href="#contact" class="grow-btn btn-primary">
+                        Falar com Especialista &nbsp; →
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="grow-with-us-section">
-            <div class="grow-with-us-container">
-                <h2>Pronto para Crescer Conosco?</h2>
-                <p>
-                    Entre em contato conosco e descubra como podemos construir uma parceria de sucesso no mercado de
-                    cosméticos.
-                </p>
-                <a href="#contact" class="grow-btn">
-                    Falar com Especialista &nbsp; →
-                </a>
-            </div>
-        </section>
-
-        <!-- ...existing code... -->
         <section id="team" class="team-section">
             <div class="team-header">
                 <h1>Nossa <span class="highlight">Equipe</span> de Diretores</h1>
@@ -387,17 +408,16 @@
                 </p>
             </div>
             <div class="team-grid">
-                <!-- Card 1 -->
                 <div class="team-card">
                     <div class="team-photo">
-                        <img src="./assets/team-jean.png" alt="Jean Caldeira">
+                        <img src="./assets/team-jean.svg" alt="Jean Caldeira">
                     </div>
                     <h2>Jean Caldeira</h2>
                     <span class="team-role">CEO & Fundador</span>
                     <div class="team-tags">
-                        <span>Vendas B2B</span>
-                        <span>Expansão de Mercado</span>
-                        <span>Relacionamento</span>
+                        <span>Visão Estratégica</span>
+                        <span>Crescimento &amp; Expansão</span>
+                        <span>Liderança</span>
                     </div>
                     <p>Nossos presidentes, Jean Caldeira e Luciano Nascimento, são empresários de sucesso que se uniram
                         para
@@ -405,87 +425,80 @@
                         incomparável.
                     </p>
                 </div>
-                <!-- Card 2 -->
                 <div class="team-card">
                     <div class="team-photo">
-                        <img src="./assets/team-luciano.png" alt="Luciano Nascimento">
+                        <img src="./assets/team-luciano.svg" alt="Luciano Nascimento">
                     </div>
                     <h2>Luciano Nascimento</h2>
                     <span class="team-role">CEO & Fundador</span>
                     <div class="team-tags">
-                        <span>Vendas B2B</span>
-                        <span>Expansão de Mercado</span>
-                        <span>Relacionamento</span>
+                        <span>Estratégia Corporativa</span>
+                        <span>Parcerias &amp; Networking</span>
+                        <span>Governança</span>
                     </div>
                     <p>Empresários de sucesso que se uniram para criar a Like, uma empresa com quatro grandes fábricas,
                         que
                         garantem produtos de qualidade incomparável.</p>
                 </div>
-                <!-- Card 3 -->
                 <div class="team-card">
                     <div class="team-photo">
-                        <img src="./assets/team-gustavo.png" alt="Gustavo Viana">
+                        <img src="./assets/team-gustavo.svg" alt="Gustavo Viana">
                     </div>
                     <h2>Gustavo Viana</h2>
                     <span class="team-role">Diretor de Tecnologia</span>
                     <div class="team-tags">
-                        <span>Vendas B2B</span>
-                        <span>Expansão de Mercado</span>
-                        <span>Relacionamento</span>
+                        <span>Inovação</span>
+                        <span>Arquitetura de Sistemas</span>
+                        <span>Transformação Digital</span>
                     </div>
                     <p>Descubra como nosso modelo de Marketing Multinível transforma dedicação em resultados, oferecendo
                         a você
                         a chance de empreender com produtos de qualidade e suporte contínuo.</p>
                 </div>
-                <!-- Card 4 -->
                 <div class="team-card">
                     <div class="team-photo">
-                        <img src="./assets/team-nilson.png" alt="Nilson Lima">
+                        <img src="./assets/team-nilson.svg" alt="Nilson Lima">
                     </div>
                     <h2>Nilson Lima</h2>
                     <span class="team-role">Diretor de Expansão</span>
                     <div class="team-tags">
-                        <span>Vendas B2B</span>
                         <span>Expansão de Mercado</span>
-                        <span>Relacionamento</span>
+                        <span>Vendas B2B</span>
+                        <span>Parcerias Estratégicas</span>
                     </div>
                     <p>Um dos maiores estrategistas do Marketing Multinível, Nilson Lima acumula 20 anos de trajetória
                         transformando negócios e liderando equipes rumo a faturamentos milionários.</p>
                 </div>
-                <!-- Card 5 -->
                 <div class="team-card">
                     <div class="team-photo">
-                        <img src="./assets/team-debora.png" alt="Débora Ahmed">
+                        <img src="./assets/team-debora.svg" alt="Débora Ahmed">
                     </div>
                     <h2>Débora Ahmed</h2>
                     <span class="team-role">Diretora de Relacionamento</span>
                     <div class="team-tags">
-                        <span>Vendas B2B</span>
-                        <span>Expansão de Mercado</span>
-                        <span>Relacionamento</span>
+                        <span>Experiência do Cliente</span>
+                        <span>Comunicação</span>
+                        <span>Engajamento de Comunidade</span>
                     </div>
                     <p>Débora Ahmed chegou ao time da Like com uma missão clara: aproximar ainda mais a empresa dos
                         clientes e
                         das áreas de atendimento aos distribuidores e franquias.</p>
                 </div>
-                <!-- Card 6 -->
                 <div class="team-card">
                     <div class="team-photo">
-                        <!-- Caso não tenha foto, use um círculo colorido -->
                         <div class="team-placeholder"></div>
                     </div>
                     <h2>Márcio Stalschmidt</h2>
                     <span class="team-role">Diretor de Operações</span>
                     <div class="team-tags">
-                        <span>Vendas B2B</span>
-                        <span>Expansão de Mercado</span>
-                        <span>Relacionamento</span>
+                        <span>Eficiência Operacional</span>
+                        <span>Logística &amp; Supply</span>
+                        <span>Qualidade</span>
                     </div>
                     <p>Márcio Stalschmidt é um profissional com mais de 40 anos de experiência no mundo corporativo,
                         atuando em
                         empresas nacionais e multinacionais de destaque.</p>
                 </div>
-                <!-- Card 7 -->
                 <div class="team-card">
                     <div class="team-photo">
                         <div class="team-placeholder"></div>
@@ -493,9 +506,9 @@
                     <h2>Sergio</h2>
                     <span class="team-role">Diretor de Operações</span>
                     <div class="team-tags">
-                        <span>Vendas B2B</span>
-                        <span>Expansão de Mercado</span>
-                        <span>Relacionamento</span>
+                        <span>Processos</span>
+                        <span>Eficiência Operacional</span>
+                        <span>Qualidade</span>
                     </div>
                     <p>Sergio é reconhecido por sua liderança e visão estratégica, colaborando para o crescimento e
                         expansão de
@@ -503,7 +516,6 @@
                 </div>
             </div>
         </section>
-        <!-- ...existing code... -->
 
     </main>
 
@@ -539,6 +551,55 @@
                 }
             });
         });
+
+        (function () {
+            const openBtn = document.getElementById('open-auth-modal');
+            const modal = document.getElementById('auth-modal');
+            if (!openBtn || !modal) return;
+
+            const backdrop = modal.querySelector('.auth-backdrop');
+            const closeButtons = modal.querySelectorAll('[data-close]');
+            const tabs = modal.querySelectorAll('.auth-tab');
+            const panels = modal.querySelectorAll('.auth-panel');
+
+            const openModal = () => {
+                modal.setAttribute('aria-hidden', 'false');
+                modal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closeModal = () => {
+                modal.setAttribute('aria-hidden', 'true');
+                modal.classList.remove('open');
+                document.body.style.overflow = '';
+            };
+
+            openBtn.addEventListener('click', openModal);
+            closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
+            backdrop.addEventListener('click', closeModal);
+            window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = tab.getAttribute('data-tab-target');
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    panels.forEach(p => {
+                        p.classList.toggle('active', p.getAttribute('data-tab') === target);
+                    });
+                });
+            });
+
+            modal.addEventListener('click', (e) => {
+                const toggle = e.target.closest('.toggle-password');
+                if (!toggle) return;
+                const input = toggle.previousElementSibling;
+                if (!input) return;
+                const isPassword = input.getAttribute('type') === 'password';
+                input.setAttribute('type', isPassword ? 'text' : 'password');
+                toggle.setAttribute('aria-label', isPassword ? 'Ocultar senha' : 'Mostrar senha');
+            });
+        })();
     </script>
 </body>
 

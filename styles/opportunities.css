@@ -1,26 +1,24 @@
-/* ...existing code... */
 .opportunities-section {
-    background: #fff;
     border-radius: 16px;
     padding: 40px 24px;
     margin: 40px auto;
     max-width: 1100px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
     text-align: center;
 }
 
 .opportunities-section h1 {
-    font-size: 2rem;
-    margin-bottom: 8px;
+    font-size: 50px;
+    font-weight: 600;
 }
 
 .opportunities-section .highlight {
     color: #18a34a;
+    font-weight: 600;
 }
 
 .opportunities-section p {
     color: #555;
-    margin-bottom: 32px;
+    margin-top: 8px;
 }
 
 .opportunities-grid {
@@ -34,36 +32,49 @@
     background: #fafafa;
     border-radius: 16px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.03);
-    padding: 32px 20px;
+    padding: 25px;
+    margin-top: 60px;
     min-width: 280px;
     max-width: 340px;
     flex: 1 1 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    background: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    box-shadow: var(--sombra);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    overflow: hidden;
 }
 
-.opportunity-icon img {
+.opportunity-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .08);
+    border-color: #cfe8db;
+}
+
+.opportunity-icon {
     background: #eaf9f0;
     border-radius: 12px;
     width: 48px;
     height: 48px;
-    margin-bottom: 16px;
 }
 
 .opportunity-card h2 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
+    font-size: 16px;
 }
 
 .opportunity-card p {
-    color: #666;
-    font-size: 0.98rem;
+    color: var(--color-gray);
+    font-size: 12px;
 }
 
-/* ...existing code... */
 .grow-with-us-section {
     background: linear-gradient(90deg, #eaf9f0 0%, #f6fcf9 100%);
     border-radius: 20px;
-    margin: 32px auto;
+    margin: 40px auto;
     max-width: 1200px;
     padding: 36px 24px;
     text-align: center;
@@ -71,34 +82,150 @@
 }
 
 .grow-with-us-container h2 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 18px;
     color: #222;
 }
 
 .grow-with-us-container p {
     color: #555;
     margin-bottom: 24px;
-    font-size: 1rem;
+    font-size: 14px;
 }
 
 .grow-btn {
     display: inline-block;
-    background: #18a34a;
-    color: #fff;
-    border-radius: 8px;
     padding: 12px 28px;
-    font-size: 1rem;
-    font-weight: 500;
     text-decoration: none;
-    transition: background 0.2s;
 }
 
 .grow-btn:hover {
     background: #14863a;
 }
 
-/* ...existing code...
+.business-opportunities-grid {
+    margin-top: 48px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
-/* ...existing code... */
+.business-opportunity-card {
+    background: #fff;
+    border-radius: 16px;
+    background: var(--fundo);
+    border: 1px solid var(--borda);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    padding: 21px;
+    min-width: 340px;
+    flex: 1 1 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+.opportunity-type {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 0.85rem;
+    color: #888;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.opportunity-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    img {
+        height: 26px;
+    }
+}
+
+.business-opportunity-card h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.business-opportunity-card p {
+    color: var(--color-gray);
+    text-align: start;
+    font-size: 13px;
+}
+
+.benefits {
+    font-size: 13px;
+    margin-top: 20px;
+    text-align: start;
+    margin-bottom: 24px;
+}
+
+.benefits strong {
+    display: block;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.benefits ul {
+    margin: 0;
+    list-style-type: none;
+}
+
+.benefits li {
+    color: var(--color-gray);
+    font-size: 13px;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.benefits li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-size: 16px;
+}
+
+.opportunities-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .business-section {
+        padding: 40px 0;
+    }
+
+    .business-header h1 {
+        font-size: 35px;
+    }
+
+    .business-header p {
+        font-size: 14px;
+    }
+
+    .business-card {
+        padding: 15px;
+    }
+
+    .business-card h3 {
+        font-size: 13px;
+    }
+
+    .business-card p {
+        font-size: 12px;
+    }
+}
