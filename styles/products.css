@@ -1,0 +1,149 @@
+/* ...existing code... */
+.products-section {
+    max-width: 1200px;
+    margin: 48px auto;
+    padding: 0 24px 32px 24px;
+}
+
+.products-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.products-header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.products-header p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+    padding: 18px 16px 16px 16px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 260px;
+    position: relative;
+}
+
+.product-card img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.product-label {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: #18a34a;
+    color: #fff;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    padding: 3px 12px;
+    font-weight: 500;
+}
+
+.product-card h2 {
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.product-card ul {
+    padding-left: 18px;
+    margin: 0;
+    color: #18a34a;
+    font-size: 0.98rem;
+}
+
+.certifications-section {
+    background: #f6fcf9;
+    border-radius: 16px;
+    padding: 32px 18px;
+    margin-top: 32px;
+    text-align: center;
+}
+
+.certifications-section h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.certifications-section p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 24px;
+}
+
+.certifications-grid {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.certification-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.certification-item img {
+    width: 32px;
+    height: 32px;
+}
+
+.certification-item span {
+    font-size: 0.95rem;
+    color: #18a34a;
+    font-weight: 500;
+}
+
+.certifications-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.certifications-numbers div {
+    text-align: center;
+}
+
+.certifications-numbers strong {
+    font-size: 1.2rem;
+    color: #18a34a;
+    font-weight: 600;
+    display: block;
+}
+
+.certifications-numbers span {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* ...existing code... */
