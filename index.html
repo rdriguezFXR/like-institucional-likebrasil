@@ -10,16 +10,16 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/modal.css">
     <link rel="stylesheet" href="./styles/home.css">
     <link rel="stylesheet" href="./styles/about.css">
     <link rel="stylesheet" href="./styles/industry.css">
     <link rel="stylesheet" href="./styles/business.css">
     <link rel="stylesheet" href="./styles/opportunities.css">
     <link rel="stylesheet" href="./styles/team.css">
-    <link rel="stylesheet" href="./styles/modal.css">
-    <link rel="stylesheet" href="./styles/products.css">
     <link rel="stylesheet" href="./styles/steps.css">
-    <link rel="stylesheet" href="./styles/form.css">
+    <link rel="stylesheet" href="./styles/products.css">
+    <link rel="stylesheet" href="./styles/contact.css">
     <link rel="stylesheet" href="./styles/footer.css">
     <title>Like Brasil</title>
 </head>
@@ -27,15 +27,23 @@
 <body>
     <header>
         <img src="./assets/logolikebrasil.svg" alt="Like Brasil Logo">
-        <nav>
+
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
+
+        <nav id="nav">
             <a href="#home">Início</a>
             <a href="#about">Sobre</a>
             <a href="#industry">Indústria</a>
             <a href="#business">Negócio</a>
             <a href="#opportunities">Oportunidades</a>
             <a href="#team">Equipe</a>
+            <a href="#contact" class="mobile-only">Contato</a>
+            <button id="mobile-auth" class="mobile-only button-mobile">Entrar</button>
         </nav>
-        <div class="header-actions">
+
+        <div class="header-actions desktop-only">
             <a href="#contact">Contato</a>
             <button id="open-auth-modal">Entrar</button>
         </div>
@@ -44,11 +52,7 @@
     <div id="auth-modal" class="auth-modal" aria-hidden="true">
         <div class="auth-backdrop" data-close></div>
         <div class="auth-dialog" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
-            <button class="auth-close" aria-label="Fechar" title="Fechar" data-close>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 6L18 18M18 6L6 18" stroke="#fff" stroke-width="2" stroke-linecap="round" />
-                </svg>
-            </button>
+            <img src="/assets/login-img.svg" style="max-width: 105%;">
             <div class="auth-main">
                 <div class="auth-tabs" role="tablist" aria-label="Ações de conta">
                     <button class="auth-tab active" role="tab" aria-selected="true" data-tab-target="login">Acesse a sua
@@ -132,42 +136,49 @@
 
     <main>
         <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h1>Sua Jornada Para o <span class="highlight">Sucesso</span></h1>
-                <p>Alcance seus objetivos com produtos inovadores e uma oportunidade de negócio que coloca você no
-                    centro de tudo.</p>
-                <div class="hero-buttons">
-                    <button class="btn-primary">Nossa História
-                        <img src="./assets/arrowright.svg" alt="Seta">
-                    </button>
-                    <button class="btn-secondary">Nossos Produtos</button>
+            <div class="background-global">
+                <div class="hero-content">
+                    <h1>Sua Jornada Para o <span class="highlight">Sucesso</span></h1>
+                    <p>Alcance seus objetivos com produtos inovadores e uma oportunidade de negócio que coloca você no
+                        centro de tudo.</p>
+                    <div class="hero-buttons">
+                        <a href="#about" style="text-decoration: none;"><button class="btn-primary">Nossa História
+                                <img src="./assets/arrowright.svg" alt="Seta">
+                            </button></a>
+                        <a href="#products"><button class="btn-secondary">Nossos Produtos</button></a>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-media">
-                <video class="hero-video" autoplay loop muted playsinline>
-                    <source src="./assets/video-like-brasil.mp4" type="video/mp4">
-                </video>
+                <div class="hero-media">
+                    <video class="hero-video" autoplay loop muted playsinline>
+                        <source src="./assets/video-like-brasil.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
         </section>
 
         <section id="about" class="about-section">
-            <div class="about-image">
-                <img src="./assets/foto-home.png" alt="Like Brasil">
-            </div>
-            <div class="about-content">
-                <h1>Descubra a história por trás da <span class="highlight">Like Brasil</span></h1>
-                <p>Nascida em 2009 com a missão de criar cosméticos verdadeiramente naturais, a Like Brasil revolucionou
-                    o mercado brasileiro ao desenvolver produtos que respeitam tanto a pele quanto o meio ambiente.</p>
-                <p>Nossa jornada começou com a descoberta dos poderes únicos da biodiversidade brasileira. Hoje, somos
-                    líderes em cosméticos naturais, utilizando ingredientes como açaí, cupuaçu, copaíba e buriti em
-                    fórmulas inovadoras e sustentáveis.</p>
-                <h3>Nossos diferenciais:</h3>
-                <ul class="features-list">
-                    <li>Fórmulas livres de parabenos, sulfatos e derivados de petróleo</li>
-                    <li>Embalagens recicláveis e refis disponíveis</li>
-                    <li>Parceria direta com produtores e comunidades rurais</li>
-                    <li>Certificações nacionais e internacionais de qualidade</li>
-                </ul>
+            <div class="background-global">
+                <div class="about-image">
+                    <img src="./assets/foto-home.svg" alt="Like Brasil">
+                </div>
+                <div class="about-content">
+                    <h1>Descubra a história por trás da <span class="highlight">Like Brasil</span></h1>
+                    <p>Nascida em 2009 com a missão de criar cosméticos verdadeiramente naturais, a Like Brasil
+                        revolucionou
+                        o mercado brasileiro ao desenvolver produtos que respeitam tanto a pele quanto o meio ambiente.
+                    </p>
+                    <p>Nossa jornada começou com a descoberta dos poderes únicos da biodiversidade brasileira. Hoje,
+                        somos
+                        líderes em cosméticos naturais, utilizando ingredientes como açaí, cupuaçu, copaíba e buriti em
+                        fórmulas inovadoras e sustentáveis.</p>
+                    <h3>Nossos diferenciais:</h3>
+                    <ul class="features-list">
+                        <li>Fórmulas livres de parabenos, sulfatos e derivados de petróleo</li>
+                        <li>Embalagens recicláveis e refis disponíveis</li>
+                        <li>Parceria direta com produtores e comunidades rurais</li>
+                        <li>Certificações nacionais e internacionais de qualidade</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -217,22 +228,24 @@
         </section>
 
         <section id="industry" class="industry-section">
-            <div class="industry-header">
-                <h1>Nossa <span class="highlight">Indústria</span></h1>
-                <p>Grandes unidades indústriais próprias.</p>
-            </div>
-            <div class="industry-media">
-                <iframe class="industry-video" src="https://www.youtube.com/embed/j5XMkiVSj8o?autoplay=1&mute=1"
-                    frameborder="0" allowfullscreen>
-                </iframe>
-                <div>
-                    <h1>Excelência em Cada Detalhe</h1>
-                    <p>Nossa fábrica de 5.000m² está localizada em São Paulo e conta com laboratórios próprios de P&D,
-                        área de produção automatizada e centro de distribuição integrado.</p>
-                    <li>Capacidade de produção: 1 milhão de unidades/mês</li>
-                    <li>Laboratório próprio com 15 pesquisadores</li>
-                    <li>Certificação ISO 9001:2015</li>
-                    <li>100% licenciada pela ANVISA</li>
+            <div class="backgroundindustry">
+                <div class="industry-header">
+                    <h1>Nossa <span class="highlight">Indústria</span></h1>
+                    <p>Grandes unidades indústriais próprias.</p>
+                </div>
+                <div class="industry-media">
+                    <iframe class="industry-video" src="https://www.youtube.com/embed/j5XMkiVSj8o?autoplay=1&mute=1"
+                        frameborder="0" allowfullscreen>
+                    </iframe>
+                    <div>
+                        <h1>Excelência em Cada Detalhe</h1>
+                        <p>Nossa fábrica de 5.000m² está localizada em São Paulo e conta com laboratórios próprios de P&D,
+                            área de produção automatizada e centro de distribuição integrado.</p>
+                        <li>Capacidade de produção: 1 milhão de unidades/mês</li>
+                        <li>Laboratório próprio com 15 pesquisadores</li>
+                        <li>Certificação ISO 9001:2015</li>
+                        <li>100% licenciada pela ANVISA</li>
+                    </div>
                 </div>
             </div>
         </section>
@@ -503,10 +516,10 @@
                 </div>
                 <div class="team-card">
                     <div class="team-photo">
-                        <div class="team-placeholder"></div>
+                        <img src="./assets/team-marcio.svg" alt="Débora Ahmed">
                     </div>
                     <h2>Márcio Stalschmidt</h2>
-                    <span class="team-role">Diretor de Operações</span>
+                    <span class="team-role">Diretor de Educação</span>
                     <div class="team-tags">
                         <span>Eficiência Operacional</span>
                         <span>Logística &amp; Supply</span>
@@ -518,10 +531,10 @@
                 </div>
                 <div class="team-card">
                     <div class="team-photo">
-                        <div class="team-placeholder"></div>
+                        <img src="./assets/team-sergio.svg" alt="Débora Ahmed">
                     </div>
-                    <h2>Sergio</h2>
-                    <span class="team-role">Diretor de Operações</span>
+                    <h2>Sérgio Oliveira</h2>
+                    <span class="team-role">Diretor de Expansão</span>
                     <div class="team-tags">
                         <span>Processos</span>
                         <span>Eficiência Operacional</span>
@@ -534,7 +547,6 @@
             </div>
         </section>
 
-
         <section id="steps" class="steps-section">
             <div class="steps-header">
                 <h1>Etapas Que Fazem a <span class="highlight">Diferença</span></h1>
@@ -545,7 +557,7 @@
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-icon" style="background:#ff8000;">
-                        <img src="./assets/user-add.svg" alt="Cadastro Rápido">
+                        <img src="./assets/users-add.svg" alt="Cadastro Rápido">
                     </div>
                     <h2>Cadastro Rápido</h2>
                     <p>
@@ -557,7 +569,7 @@
                 </div>
                 <div class="step-card">
                     <div class="step-icon" style="background:#a259ff;">
-                        <img src="./assets/star.svg" alt="Treinamento Personalizado">
+                        <img src="./assets/starts.svg" alt="Treinamento Personalizado">
                     </div>
                     <h2>Treinamento Personalizado</h2>
                     <p>
@@ -580,7 +592,6 @@
             </div>
         </section>
 
-
         <section id="products" class="products-section">
             <div class="products-header">
                 <h1>Nossas Linhas de Produtos</h1>
@@ -588,48 +599,48 @@
             </div>
             <div class="products-grid">
                 <div class="product-card">
-                    <img src="./assets/linha-facial.jpg" alt="Linha Facial">
-                    <div class="product-label">Para todos os tipos de pele</div>
-                    <h2>Linha Facial</h2>
-                    <ul>
+                    <img src="./assets/producttest.jpg" alt="Like Blue">
+                    <div class="product-label">Perfume</div>
+                    <div class="product-info">
+                        <h2>Like Blue</h2>
                         <li>Hidratante</li>
                         <li>Sabonete anti-idade</li>
                         <li>Protetores solares</li>
                         <li>Limpadores</li>
-                    </ul>
+                    </div>
                 </div>
                 <div class="product-card">
-                    <img src="./assets/linha-corporal.jpg" alt="Linha Corporal">
-                    <div class="product-label">Nutrição & proteção</div>
-                    <h2>Linha Corporal</h2>
-                    <ul>
-                        <li>Cremes hidratantes</li>
-                        <li>Óleos corporais</li>
-                        <li>Esfoliantes</li>
-                        <li>Desodorantes</li>
-                    </ul>
+                    <img src="./assets/producttest.jpg" alt="Like Blue">
+                    <div class="product-label">Perfume</div>
+                    <div class="product-info">
+                        <h2>Like Blue</h2>
+                        <li>Hidratante</li>
+                        <li>Sabonete anti-idade</li>
+                        <li>Protetores solares</li>
+                        <li>Limpadores</li>
+                    </div>
                 </div>
                 <div class="product-card">
-                    <img src="./assets/linha-capilar.jpg" alt="Linha Capilar">
-                    <div class="product-label">Cuidado intensivo</div>
-                    <h2>Linha Capilar</h2>
-                    <ul>
-                        <li>Shampoos</li>
-                        <li>Condicionadores</li>
-                        <li>Máscaras</li>
-                        <li>Leave-in</li>
-                    </ul>
+                    <img src="./assets/producttest.jpg" alt="Like Blue">
+                    <div class="product-label">Perfume</div>
+                    <div class="product-info">
+                        <h2>Like Blue</h2>
+                        <li>Hidratante</li>
+                        <li>Sabonete anti-idade</li>
+                        <li>Protetores solares</li>
+                        <li>Limpadores</li>
+                    </div>
                 </div>
                 <div class="product-card">
-                    <img src="./assets/linha-makeup.jpg" alt="Linha Make-up">
-                    <div class="product-label">Beleza natural</div>
-                    <h2>Linha Make-up</h2>
-                    <ul>
-                        <li>Bases</li>
-                        <li>Batons</li>
-                        <li>Sombras</li>
-                        <li>Paletas compactas</li>
-                    </ul>
+                    <img src="./assets/producttest.jpg" alt="Like Blue">
+                    <div class="product-label">Perfume</div>
+                    <div class="product-info">
+                        <h2>Like Blue</h2>
+                        <li>Hidratante</li>
+                        <li>Sabonete anti-idade</li>
+                        <li>Protetores solares</li>
+                        <li>Limpadores</li>
+                    </div>
                 </div>
             </div>
             <div class="certifications-section">
@@ -646,125 +657,119 @@
                         <span>ISO 9001</span>
                     </div>
                     <div class="certification-item">
-                        <img src="./assets/crueltyfree.svg" alt="Cruelty Free">
+                        <img src="./assets/heart.svg" alt="Cruelty Free">
                         <span>Cruelty Free</span>
                     </div>
                     <div class="certification-item">
-                        <img src="./assets/ecocert.svg" alt="ECOCERT">
+                        <img src="./assets/plan.svg" alt="ECOCERT">
                         <span>ECOCERT</span>
                     </div>
                     <div class="certification-item">
-                        <img src="./assets/inmetro.svg" alt="INMETRO">
+                        <img src="./assets/star.svg" alt="INMETRO">
                         <span>INMETRO</span>
-                    </div>
-                </div>
-                <div class="certifications-numbers">
-                    <div>
-                        <strong>100%</strong>
-                        <span>Testados</span>
-                    </div>
-                    <div>
-                        <strong>0%</strong>
-                        <span>Testes Animal</span>
-                    </div>
-                    <div>
-                        <strong>98%</strong>
-                        <span>Ingredientes Naturais</span>
-                    </div>
-                    <div>
-                        <strong>5★</strong>
-                        <span>Avaliação Média</span>
                     </div>
                 </div>
             </div>
         </section>
 
-
         <section id="contact" class="contact-section">
-            <div class="contact-header">
-                <h1>Vamos Conversar?</h1>
-                <p>
-                    Interessado em nossos produtos naturais ou oportunidades de negócio? Nossa equipe está pronta para
-                    ajudar
-                    você a descobrir o melhor da beleza brasileira.
-                </p>
-            </div>
-            <div class="contact-grid">
-                <!-- Formulário de contato -->
-                <form class="contact-form">
-                    <h2><span class="form-icon">🟢</span> Entre em Contato</h2>
-                    <div class="form-row">
-                        <input type="text" name="nome" placeholder="Nome Completo *" required>
-                        <input type="email" name="email" placeholder="Email *" required>
-                    </div>
-                    <div class="form-row">
-                        <input type="tel" name="telefone" placeholder="(11) 99999-9999 *" required>
-                        <input type="text" name="empresa" placeholder="Empresa">
-                    </div>
-                    <div class="form-row">
-                        <select name="area" required>
-                            <option value="">Área de Interesse *</option>
-                            <option value="produtos">Produtos Naturais</option>
-                            <option value="negocio">Oportunidade de Negócio</option>
-                            <option value="parceria">Parcerias</option>
-                            <option value="outros">Outros</option>
-                        </select>
-                    </div>
-                    <textarea name="mensagem" rows="3" placeholder="Como podemos ajudar você?"></textarea>
-                    <button type="submit" class="btn-primary contact-btn">
-                        <img src="./assets/send.svg" alt="" style="vertical-align:middle;width:18px;margin-right:6px;">
-                        Enviar Mensagem
-                    </button>
-                </form>
-                <!-- Informações de contato -->
-                <div class="contact-info">
-                    <h2>Informações de Contato</h2>
-                    <div class="info-list">
-                        <div class="info-item">
-                            <span class="info-icon"><img src="./assets/mail.svg" alt="Email"></span>
+            <div class="contact-main">
+                <div class="contact-header">
+                    <h1>Vamos Conversar?</h1>
+                    <p>
+                        Interessado em nossos produtos naturais ou oportunidades de negócio? Nossa equipe está pronta
+                        para
+                        ajudar você a descobrir o melhor da beleza brasileira.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <form class="contact-form">
+                        <h2><span class="form-icon"><img src="./assets/contact.svg" alt=""></span> Entre em Contato</h2>
+                        <div style="display: flex; gap: 20px; flex-direction: column;">
                             <div>
-                                <strong>Email</strong>
-                                <span>contato@likebrasil.com.br</span>
-                                <small>Respostas em até 24h</small>
+                                <label class="label-form" for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" placeholder="Nome Completo *" required>
+                            </div>
+                            <div>
+                                <label class="label-form" for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Email *" required>
+                            </div>
+                            <div>
+                                <label class="label-form" for="telefone">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="Telefone *" required>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <span class="info-icon"><img src="./assets/phone.svg" alt="Telefone"></span>
-                            <div>
-                                <strong>Telefone</strong>
-                                <span>(11) 4000-1234</span>
+
+                        <button type="submit" class="contact-btn">
+                            <img src="./assets/send.svg" alt=""
+                                style="width:16px; margin-right:6px; vertical-align:middle;">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+
+                    <div class="contact-info">
+                        <h2>Informações de Contato</h2>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <img src="./assets/mail.svg" alt="Email">
+                                </div>
+                                <div>
+                                    <strong>Email</strong>
+                                    <span>contato@likebrasil.com.br</span>
+                                    <small>Resposta em até 24h</small>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <img src="./assets/phone.svg" alt="Telefone">
+                                </div>
+                                <div>
+                                    <strong>Telefone</strong>
+                                    <span>(11) 4000-1234</span>
+                                    <small>Seg a Sex, 8h às 18h</small>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <img src="./assets/pin.svg" alt="Endereço">
+                                </div>
+                                <div>
+                                    <strong>Endereço</strong>
+                                    <span>São Paulo - SP</span>
+                                    <small>Distrito Industrial Verde</small>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <img src="./assets/hours.svg" alt="Horário">
+                                </div>
+                                <div>
+                                    <strong>Horário</strong>
+                                    <span>8h às 18h</span>
+                                    <small>Segunda a Sexta-feira</small>
+                                </div>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <span class="info-icon"><img src="./assets/map.svg" alt="Endereço"></span>
-                            <div>
-                                <strong>Endereço</strong>
-                                <span>São Paulo - SP</span>
-                                <small>Segunda a Sexta: 8h às 18h</small>
+
+                        <div class="contact-social">
+                            <h3>Redes Sociais</h3>
+                            <div class="contact-icon">
+                                <a href="https://www.youtube.com/@GrupoLikeBrasilOficial"><img
+                                        src="./assets/youtube.svg" alt="Youtube"></a>
+                                <a href="https://www.instagram.com/grupolikebrasil.ofc"><img
+                                        src="./assets/instagram.svg" alt="Instagram"></a>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <span class="info-icon"><img src="./assets/clock.svg" alt="Horário"></span>
+
+                        <div class="contact-consulting">
                             <div>
-                                <strong>Horário</strong>
-                                <span>8h às 18h</span>
-                                <small>Segunda a Sexta-feira</small>
+                                <strong>Consultoria Especializada</strong>
+                                <p>Agende uma conversa com nossa equipe e descubra como nossos produtos naturais podem
+                                    transformar seu negócio ou sua rotina de beleza.</p>
+                                <button class="btn-secondary">Agendar Conversa</button>
                             </div>
-                        </div>
-                    </div>
-                    <div class="contact-social">
-                        <h3>Redes Sociais</h3>
-                        <a href="#" aria-label="Instagram"><img src="./assets/instagram.svg" alt="Instagram"></a>
-                        <a href="#" aria-label="LinkedIn"><img src="./assets/linkedin.svg" alt="LinkedIn"></a>
-                    </div>
-                    <div class="contact-consulting">
-                        <span class="consulting-icon">✔️</span>
-                        <div>
-                            <strong>Consultoria Especializada</strong>
-                            <p>Agende uma conversa com nossa equipe e descubra como nossos produtos naturais podem
-                                transformar
-                                seu negócio ou sua rotina de beleza.</p>
-                            <button class="btn-secondary">Agendar Consulta</button>
                         </div>
                     </div>
                 </div>
@@ -773,70 +778,62 @@
 
         <footer class="footer">
             <div class="container">
-                <div class="grid">
-                    <!-- Logo e Slogan -->
+                <div class="footer-grid">
                     <div class="footer-col">
-                        <h3 class="logo">LIKE BRASIL</h3>
-                        <p class="slogan">Inovação que transforma vidas.</p>
+                        <div class="logo-area">
+                            <img src="/assets/logo-like-brasil-footer.svg" alt="Like Brasil" class="logo-icon" />
+                            <div>
+                                <h3 class="color-footer">Like Brasil</h3>
+                            </div>
+                        </div>
                         <p class="desc">
-                            Empresa genuinamente brasileira especializada em cosméticos ozonizados,
-                            perfumaria e nutrição de alta qualidade.
+                            Alcance seus objetivos com produtos inovadores e uma oportunidade de negócio que coloca você
+                            no centro de tudo.
                         </p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
                     </div>
 
-                    <!-- Links -->
-                    <div class="footer-col center">
-                        <h4 class="title">Links Úteis</h4>
-                        <ul class="links">
-                            <li>
-                                <a href="https://likebrasil.com.br/">
-                                    🌐 Site Oficial
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://likebrasil.com.br/#sobre">Sobre Nós</a>
-                            </li>
-                            <li>
-                                <a href="https://seja-um-franqueado-likebrasil.site/">
-                                    Seja um Franqueado
-                                </a>
-                            </li>
+                    <div class="footer-col">
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="#home">Início</a></li>
+                            <li><a href="#about">Sobre Nós</a></li>
+                            <li><a href="#industry">Nossa Indústria</a></li>
+                            <li><a href="#business">Nosso Negócio</a></li>
+                            <li><a href="#opportunities">Oportunidades</a></li>
+                            <li><a href="#team">Nossa Equipe</a></li>
                         </ul>
                     </div>
 
-                    <!-- Redes e Contato -->
-                    <div class="footer-col right">
-                        <h4 class="title">Conecte-se</h4>
-                        <div class="socials">
-                            <a href="https://www.instagram.com/grupolikebrasil.ofc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                                class="instagram">IG</a>
-                            <a href="https://www.facebook.com/grupolikebrasil.ofc" class="facebook">FB</a>
-                            <a href="https://www.youtube.com/@GrupoLikeBrasilOficial" class="youtube">YT</a>
-                        </div>
+                    <div class="footer-col">
+                        <h4>Nossos Produtos</h4>
+                        <ul>
+                            <li><a href="#">Hidratantes Faciais</a></li>
+                            <li><a href="#">Óleos Corporais</a></li>
+                            <li><a href="#">Produtos Capilares</a></li>
+                            <li><a href="#">Cosméticos Coloridos</a></li>
+                            <li><a href="#">Linha Infantil</a></li>
+                            <li><a href="#">Private Label</a></li>
+                        </ul>
+                    </div>
 
-                        <div class="contact">
-                            <p>✉ contato@likebrasil.com.br</p>
-                            <p>☎ (27) 99822-0104</p>
-                        </div>
+                    <div class="footer-col">
+                        <h4>Fale Conosco</h4>
+                        <p class="color-footer2"><i class="fa-regular fa-envelope"></i> contato@likebrasil.com.br</p>
+                        <p class="color-footer2"><i class="fa-solid fa-phone"></i> (11) 4000-1234</p>
+                        <p class="color-footer2"><i class="fa-solid fa-location-dot"></i> São Paulo - SP, Brasil</p>
                     </div>
                 </div>
 
-                <!-- Linha Divisória -->
-                <div class="divider">
-                    <div class="divider-row">
-                        <div class="copy">© 2024 Like Brasil. Todos os direitos reservados.</div>
-                        <div class="middle">LIKE BRASIL – Inovação que transforma vidas.</div>
-                        <div class="local">Guarapari/ES • Cachoeiro de Itapemirim/ES</div>
-                    </div>
+                <div class="footer-bottom">
+                    <p class="color-footer">© 2025 Like Brasil. Todos os direitos reservados.</p>
+                    <a href="#" class="back-top"><i class="fa-solid fa-arrow-up"></i></a>
                 </div>
             </div>
         </footer>
-
-
-
-
-
-
     </main>
 
     <script>
@@ -847,6 +844,10 @@
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
                     targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+                const navEl = document.getElementById('nav');
+                if (navEl && navEl.classList.contains('show')) {
+                    navEl.classList.remove('show');
                 }
             });
         });
@@ -870,12 +871,21 @@
                     link.classList.add('active');
                 }
             });
+
+            const navEl = document.getElementById('nav');
+            if (window.innerWidth <= 768 && navEl && navEl.classList.contains('show')) {
+                navEl.classList.remove('show');
+            }
         });
 
         (function () {
-            const openBtn = document.getElementById('open-auth-modal');
             const modal = document.getElementById('auth-modal');
-            if (!openBtn || !modal) return;
+            if (!modal) return;
+
+            const openButtons = [
+                document.getElementById('open-auth-modal'),
+                document.getElementById('mobile-auth')
+            ].filter(Boolean);
 
             const backdrop = modal.querySelector('.auth-backdrop');
             const closeButtons = modal.querySelectorAll('[data-close]');
@@ -894,7 +904,14 @@
                 document.body.style.overflow = '';
             };
 
-            openBtn.addEventListener('click', openModal);
+            openButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    openModal();
+                    // Fecha o menu mobile ao abrir o modal
+                    const navEl = document.getElementById('nav');
+                    if (navEl) navEl.classList.remove('show');
+                });
+            });
             closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
             backdrop.addEventListener('click', closeModal);
             window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
@@ -920,6 +937,25 @@
                 toggle.setAttribute('aria-label', isPassword ? 'Ocultar senha' : 'Mostrar senha');
             });
         })();
+
+        const menuToggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("nav");
+
+        menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("show");
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                nav.classList.remove('show');
+            }
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                nav.classList.remove('show');
+            }
+        });
     </script>
 </body>
 

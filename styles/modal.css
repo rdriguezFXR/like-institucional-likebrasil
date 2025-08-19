@@ -3,6 +3,7 @@
     inset: 0;
     display: none;
     z-index: 50;
+    overflow: hidden;
 }
 
 .auth-modal.open {
@@ -10,6 +11,7 @@
 }
 
 .auth-backdrop {
+    min-height: 118vh;
     position: absolute;
     inset: 0;
     background: var(--color-black-transparent);
@@ -20,10 +22,8 @@
     position: relative;
     margin: 60px auto;
     width: min(880px, 94vw);
-    background: rgba(255, 255, 255, 0.86);
     border-radius: 14px;
     box-shadow: 0 24px 70px rgba(0,0,0,.16);
-    border: 1px solid rgba(214, 232, 224, 0.8);
     overflow: hidden;
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
@@ -57,7 +57,6 @@
 .auth-tabs {
     display: flex;
     gap: 8px;
-    padding: 18px 20px 0 20px;
     position: sticky;
     top: 0;
     background: linear-gradient(to bottom, rgba(255,255,255,0.98), rgba(255,255,255,0.96));
@@ -70,10 +69,9 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 14px 18px;
-    border: 1px solid var(--borda);
+    padding: 14px 0px;
+    border: none;
     border-bottom: none;
-    border-radius: 12px 12px 0 0;
     background: #f9fbfa;
     font-size: 12px;
     color: var(--texto-suave);
@@ -249,10 +247,11 @@
 }
 
 @media (max-width: 560px) {
-    .auth-dialog { width: 94vw; margin: 40px auto; }
+    .auth-dialog { width: 94vw; margin: 10px auto; }
     .auth-tabs { padding: 12px 12px 0 12px; }
     .auth-content { padding: 12px; }
     .auth-close { top: 10px; right: 10px; }
+    .auth-modal { overflow: auto; }
 }
 
 

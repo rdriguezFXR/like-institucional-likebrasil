@@ -1,11 +1,17 @@
 .industry-section {
     width: 100%;
-    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.backgroundindustry {
+    max-width: 1200px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 50px 20px;
 }
 
 .industry-header {
@@ -28,46 +34,48 @@
 
 .industry-media {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    gap: 40px;
     margin-bottom: 60px;
+}
 
-    div {
-        margin-left: 40px;
-        width: 615px;
-        list-style: none;
-        margin-top: 20px;
+.industry-media > div {
+    margin-left: 40px;
+    width: 615px;
+    list-style: none;
+    margin-top: 20px;
+}
 
-        h1 {
-            font-size: 24px;
-        }
+.industry-media > div h1 {
+    font-size: 24px;
+}
 
-        p {
-            margin-top: 15px;
-            font-size: 14px;
-            color: var(--color-gray);
-            margin-bottom: 20px;
-        }
+.industry-media > div p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: var(--color-gray);
+    margin-bottom: 20px;
+}
 
-        li {
-            color: var(--color-gray);
-            font-size: 14px;
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 16px;
-        }
-        
-        li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--color-primary);
-            font-size: 16px;
-        }
-    }
+.industry-media > div li {
+    color: var(--color-gray);
+    font-size: 14px;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 16px;
+}
+
+.industry-media > div li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-size: 16px;
 }
 
 .industry-video {
     width: 800px;
+    max-width: 100%;
     height: 500px;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
@@ -122,9 +130,23 @@
     }
 }
 
+/* Quebra intermediária para tablets e telas menores */
+@media (max-width: 992px) {
+    .industry-media {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .industry-media > div {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     .industry-section {
-        padding: 30px 20px;
+        padding: 0px 24px;
     }
     
     .industry-header h1 {

@@ -141,8 +141,7 @@ main {
 .btn-secondary {
     border: none;
     cursor: pointer;
-    padding-left: 26px;
-    padding-right: 26px;
+    padding: 16px 26px 16px 26px;
     border-radius: 10px;
     border: 1px solid;
     color: var(--color-primary);
@@ -182,4 +181,59 @@ main {
     header nav a {
         font-size: 12px;
     }
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        justify-content: space-between;
+    }
+
+    header nav {
+        position: absolute;
+        top: 67px;
+        left: 0;
+        width: 100%;
+        background: var(--color-white);
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        display: none; 
+    }
+
+    header nav.show {
+        display: flex;
+    }
+
+    header .header-actions {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block !important;
+    }
+}
+
+.mobile-only {
+    display: none;
+}
+
+.button-mobile {
+    background-color: transparent;
+    border: none;
 }

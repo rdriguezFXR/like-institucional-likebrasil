@@ -12,7 +12,7 @@
 </g>
 <g clip-path="url(#clip3_16_181)">
 <rect width="70" height="70" rx="35" fill="#16A34A"/>
-<rect x="-4" y="9" width="79" height="71" fill="url(#pattern2_16_181)"/>
+<rect x="-39" y="3" width="149" height="134" fill="url(#pattern2_16_181)"/>
 </g>
 </g>
 <defs>
@@ -23,7 +23,7 @@
 <use xlink:href="#image1_16_181" transform="matrix(0.00267179 0 0 0.0015015 -0.000960519 0)"/>
 </pattern>
 <pattern id="pattern2_16_181" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image2_16_181" transform="matrix(0.0025 0 0 0.00278169 0 -0.0521655)"/>
+<use xlink:href="#image2_16_181" transform="matrix(0.0025 0 0 0.00277985 0 -0.0518004)"/>
 </pattern>
 <clipPath id="clip0_16_181">
 <rect width="70" height="69.8142" rx="34.9071" fill="white"/>

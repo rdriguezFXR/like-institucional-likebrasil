@@ -1,31 +1,38 @@
 .about-section {
-    padding-left: 50px;
-    padding-right: 50px;
     width: 100%;
-    height: 790px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    background: var(--color-white);
+}
+
+.about-section .background-global {
+    max-width: 1200px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 40px;
+    padding: 0 24px;
+    width: 100%;
 }
 
 .about-image {
     width: 500px;
-    height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    max-width: 100%;
 }
 
 .about-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .about-content {
-    width: 611px;
+    width: 100%;
+    max-width: 611px;
 }
 
 .about-content h1 {
@@ -52,6 +59,8 @@
 
 .features-list {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .features-list li {
@@ -70,11 +79,52 @@
     font-size: 16px;
 }
 
+/* Responsividade ABOUT */
+@media (max-width: 1200px) {
+    .about-content h1 {
+        font-size: 40px;
+    }
+
+    .about-image {
+        width: 400px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-section .background-global {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .about-content h1 {
+        font-size: 35px;
+    }
+
+    .features-list li {
+        text-align: left; /* mantém bullets alinhados */
+    }
+}
+
+@media (max-width: 576px) {
+    .about-content h1 {
+        font-size: 35px;
+    }
+
+    .about-content p,
+    .features-list li {
+        font-size: 13px;
+    }
+}
+
+
 .values-section {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 50px;
     width: 100%;
-    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,9 +148,12 @@
 }
 
 .values-grid {
-    display: flex;
-    gap: 21px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
     margin-top: 60px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .value-card {
@@ -110,9 +163,9 @@
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.084);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    padding: 23px 23px 23px 23px;
+    padding: 23px;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.500);
+    background-color: rgba(255, 255, 255, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -149,72 +202,41 @@
 .card-content p {
     color: var(--color-gray);
     margin-top: 10px;
-    width: 246px;
     font-size: 12px;
 }
 
-/* Responsividade para a página about */
-@media (max-width: 1200px) {
-    .about-section {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-    
-    .about-content {
-        width: 500px;
-    }
-    
-    .about-content h1 {
-        font-size: 40px;
-    }
-    
-    .about-image {
-        width: 400px;
-        height: 500px;
+/* Responsividade */
+@media (max-width: 1024px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
 @media (max-width: 768px) {
-    .about-section {
-        flex-direction: column;
-        height: auto;
-        padding: 50px 20px;
-        gap: 40px;
-    }
-    
-    .about-content {
-        width: 100%;
-    }
-    
-    .about-content h1 {
-        font-size: 30px;
-        text-align: center;
-    }
-    
-    .about-content p {
-        text-align: center;
-    }
-    
-    .about-image {
-        width: 100%;
-        height: 300px;
-    }
-    
     .values-section {
-        height: auto;
-        padding: 50px 20px;
+        padding: 40px 20px;
+        min-height: auto;
     }
-    
+
+    .values-header h1 {
+        font-size: 28px;
+    }
+
     .values-grid {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .value-card {
         padding: 20px;
     }
-    
-    .card-content {
-        width: 100%;
+
+    .card-content h2 {
+        font-size: 16px;
+    }
+
+    .card-content p {
+        font-size: 13px;
     }
 }
